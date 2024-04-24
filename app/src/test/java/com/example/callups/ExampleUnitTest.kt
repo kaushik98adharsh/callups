@@ -1,5 +1,9 @@
 package com.example.callups
 
+import com.example.callups.services.Network
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -14,4 +18,23 @@ class ExampleUnitTest {
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
     }
+
+    @Test
+    fun networkTest(){
+        val network = Network()
+        //val x = network.launch()
+    }
+
+    @Test
+    fun coRoutineTest() = runBlocking {
+        var x = ""
+        launch {
+            delay(2000)
+            x += "World!"
+        }
+        x+= "Hello "
+        assertEquals("Hello World!",x)
+
+    }
+
 }

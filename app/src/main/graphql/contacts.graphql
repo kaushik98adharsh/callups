@@ -1,0 +1,7 @@
+mutation AddContact($name: String!, $phone:String!) {
+    insert_contacts_DETAILS_one(object: {name: $name, phone: $phone}) {
+        _id
+        name
+        phone
+    }
+}
